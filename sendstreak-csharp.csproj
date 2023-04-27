@@ -5,6 +5,7 @@
     <PackageId>sendstreak-csharp</PackageId>
     <RootNamespace>SendStreak</RootNamespace>
     <Authors>dbettenbuk</Authors>
+    <ReleaseVersion>1.0.0</ReleaseVersion>
   </PropertyGroup>
 
   <ItemGroup>
