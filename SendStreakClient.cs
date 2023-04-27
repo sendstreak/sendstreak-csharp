@@ -72,6 +72,22 @@ namespace SendStreak
         }
 
         /// <summary>
+        /// Sends an event to store for the provided contact.
+        /// </summary>
+        /// <param name="email">The email address of the contact.</param>
+        /// <param name="eventName">Name of the event.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task SendEvent(string email, string eventName)
+        {
+            string json = JsonConvert.SerializeObject(new
+            {
+                email = email,
+                slug = eventName
+            });
+            return this.invokeSendStreakApiAsync("/v1/events", json);
+        }
+
+        /// <summary>
         /// Sends a single mail asynchronously using the template specified by the template slug.
         /// </summary>
         /// <param name="recipientAddress">The email address of the recipient.</param>
